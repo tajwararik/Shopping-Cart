@@ -1,0 +1,28 @@
+main h1 {
+  font-size: 5rem;
+  font-weight: 900;
+  margin-block: -50px 20px;
+}
+
+h1 span {
+  color: #fc0;
+}
+
+p {
+  font-size: 1.35rem;
+  margin-bottom: 20px;
+}
+
+h1,
+p {
+  color: #fff;
+}
+
+.shop > button {
+  color: #2b2631;
+  background-color: #fc0;
+  padding: 8px 30px;
+  margin-block: 30px;
+  border: none;
+  border-radius: 6px;
+}
