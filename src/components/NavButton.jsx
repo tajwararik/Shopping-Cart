@@ -1,5 +1,5 @@
 function NavButton({ children }) {
-  return <a href="#">{children}</a>;
+  return <button>{children}</button>;
 }
 
 export default NavButton;
