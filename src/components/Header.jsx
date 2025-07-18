@@ -5,7 +5,7 @@ import styles from "../styles/Header.module.css";
 
 function Header() {
   return (
-    <header>
+    <>
       <section>
         <img src={logo} alt="Logo" />
         <h1>ReactCart</h1>
@@ -14,7 +14,7 @@ function Header() {
       <Navbar className={styles.navbar} />
 
       <GiShoppingCart className={styles.shoppingCart} />
-    </header>
+    </>
   );
 }
 
