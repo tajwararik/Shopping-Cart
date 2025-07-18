@@ -1,11 +1,3 @@
-header {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  column-gap: 20px;
-  padding: 10px;
-}
-
 header section {
   display: flex;
   align-items: center;
