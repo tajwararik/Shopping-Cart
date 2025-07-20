@@ -1,7 +1,7 @@
 import NavButton from "./NavButton";
 import styles from "../styles/Home.module.css";
 
-function Home() {
+function Home({ handleClick }) {
   return (
     <>
       <h1>
@@ -11,7 +11,7 @@ function Home() {
       <p>Explore. Add. Checkout — all in one lightning-fast experience.</p>
 
       <div className={styles.shop}>
-        <NavButton>Shop</NavButton>
+        <NavButton handleClick={handleClick}>Shop</NavButton>
       </div>
     </>
   );
