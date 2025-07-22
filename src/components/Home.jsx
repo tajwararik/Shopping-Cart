@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 import NavButton from "./NavButton";
 import styles from "../styles/Home.module.css";
 
-function Home({ handleClick }) {
+function Home() {
   return (
     <>
       <h1>
@@ -10,9 +11,9 @@ function Home({ handleClick }) {
       <p>Shopping made smarter.</p>
       <p>Explore. Add. Checkout — all in one lightning-fast experience.</p>
 
-      <div className={styles.shop}>
-        <NavButton handleClick={handleClick}>Shop</NavButton>
-      </div>
+      <Link className={styles.shop} to={"/shop"}>
+        <NavButton>Shop</NavButton>
+      </Link>
     </>
   );
 }
