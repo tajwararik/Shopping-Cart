@@ -1,12 +1,16 @@
+import { Link } from "react-router-dom";
 import NavButton from "./NavButton";
 
-function Navbar() {
-  const buttons = ["Home", "Shop", "About"];
-
+function Navbar({ buttons }) {
   return (
     <nav>
       {buttons.map((button, index) => (
-        <NavButton key={index}>{button}</NavButton>
+        <Link
+          key={index}
+          to={button === "Home" ? "/" : `/${button.toLowerCase()}`}
+        >
+          <NavButton>{button}</NavButton>
+        </Link>
       ))}
     </nav>
   );
