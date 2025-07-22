@@ -1,13 +1,10 @@
 import { useState, useEffect } from "react";
+import { Outlet } from "react-router-dom";
 import Header from "./components/Header";
-import Home from "./components/Home";
-import Shop from "./components/Shop";
-import About from "./components/About";
 import "./App.css";
 
 function App() {
   const [products, setProducts] = useState([]);
-  const [isShopClicked, setIsShopClicked] = useState(false);
 
   useEffect(() => {
     fetch(
@@ -17,10 +14,6 @@ function App() {
       .then((data) => setProducts(data.products));
   }, []);
 
-  const handleClick = () => {
-    setIsShopClicked((prevState) => !prevState);
-  };
-
   return (
     <>
       <header>
@@ -28,8 +21,7 @@ function App() {
       </header>
 
       <main>
-        {!isShopClicked && <Home handleClick={handleClick} />}
-        {isShopClicked && <Shop products={products} />}
+        <Outlet context={{ products }} />
       </main>
     </>
   );
