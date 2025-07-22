@@ -1,16 +1,16 @@
+import { useOutletContext } from "react-router-dom";
 import ShoppingCart from "./ShoppingCart";
 import styles from "../styles/Shop.module.css";
 
-function Shop({ products }) {
-  console.log(products);
+function Shop() {
+  const { products } = useOutletContext();
+
   return (
-    <>
-      <section className={styles.displayCart}>
-        {products.map((product) => (
-          <ShoppingCart key={product.id} product={product} />
-        ))}
-      </section>
-    </>
+    <section className={styles.displayCart}>
+      {products.map((product) => (
+        <ShoppingCart key={product.id} product={product} />
+      ))}
+    </section>
   );
 }
 
