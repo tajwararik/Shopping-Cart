@@ -22,7 +22,7 @@ function App() {
   return (
     <>
       <header>
-        <Header />
+        <Header carts={cartList} />
       </header>
 
       <main>
