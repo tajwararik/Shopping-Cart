@@ -5,6 +5,7 @@ import "./App.css";
 
 function App() {
   const [products, setProducts] = useState([]);
+  const [cartList, setCartList] = useState([]);
 
   useEffect(() => {
     fetch(
@@ -14,6 +15,10 @@ function App() {
       .then((data) => setProducts(data.products));
   }, []);
 
+  const addToCart = (carts) => {
+    setCartList((prevCarts) => [...prevCarts, carts]);
+  };
+
   return (
     <>
       <header>
@@ -21,7 +26,7 @@ function App() {
       </header>
 
       <main>
-        <Outlet context={{ products }} />
+        <Outlet context={{ products, addToCart }} />
       </main>
     </>
   );
