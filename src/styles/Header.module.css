@@ -31,6 +31,10 @@ button:hover {
   cursor: pointer;
 }
 
+.noUnderline {
+  text-decoration: none;
+}
+
 .shoppingCart {
   display: inline-block;
   color: #fc0;
