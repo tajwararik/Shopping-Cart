@@ -36,5 +36,14 @@ button:hover {
   color: #fc0;
   font-size: 3.5rem;
   padding: 5px;
+  padding-right: 0;
   cursor: pointer;
+}
+
+header section:last-of-type p {
+  align-self: last flex-end;
+  font-size: 1.15rem;
+  color: #d1d0d2;
+  padding-bottom: 5px;
+  margin: 0;
 }
