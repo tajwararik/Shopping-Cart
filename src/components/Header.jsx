@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import Navbar from "./Navbar";
 import CartsNumber from "./CartsNumber";
@@ -16,10 +17,12 @@ function Header({ carts }) {
 
       <Navbar className={styles.navbar} buttons={buttons} />
 
-      <section>
-        <GiShoppingCart className={styles.shoppingCart} />
-        {carts.length ? <CartsNumber carts={carts} /> : null}
-      </section>
+      <Link className={styles.noUnderLine} to={"/checkout"}>
+        <section>
+          <GiShoppingCart className={styles.shoppingCart} />
+          {carts.length ? <CartsNumber carts={carts} /> : null}
+        </section>
+      </Link>
     </>
   );
 }
