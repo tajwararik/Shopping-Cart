@@ -17,7 +17,7 @@ function Header({ carts }) {
 
       <Navbar className={styles.navbar} buttons={buttons} />
 
-      <Link className={styles.noUnderLine} to={"/checkout"}>
+      <Link className={styles.noUnderline} to={"/checkout"}>
         <section>
           <GiShoppingCart className={styles.shoppingCart} />
           {carts.length ? <CartsNumber carts={carts} /> : null}
