@@ -8,7 +8,7 @@ function ShoppingCart({ product, addToCart }) {
         <p>{product.title}</p>
         <p>${product.price}</p>
       </div>
-      <button onClick={() => addToCart(product)}>Order</button>
+      <button onClick={() => addToCart(product)}>Add To Cart</button>
     </div>
   );
 }
