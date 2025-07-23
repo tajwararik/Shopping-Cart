@@ -1,9 +1,10 @@
 import logo from "../assets/logo.png";
 import Navbar from "./Navbar";
+import CartsNumber from "./CartsNumber";
 import { GiShoppingCart } from "react-icons/gi";
 import styles from "../styles/Header.module.css";
 
-function Header() {
+function Header({ carts }) {
   const buttons = ["Home", "Shop", "About"];
 
   return (
@@ -15,7 +16,10 @@ function Header() {
 
       <Navbar className={styles.navbar} buttons={buttons} />
 
-      <GiShoppingCart className={styles.shoppingCart} />
+      <section>
+        <GiShoppingCart className={styles.shoppingCart} />
+        {carts.length ? <CartsNumber carts={carts} /> : null}
+      </section>
     </>
   );
 }
