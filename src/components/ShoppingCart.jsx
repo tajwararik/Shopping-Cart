@@ -1,6 +1,6 @@
 import styles from "../styles/Shop.module.css";
 
-function ShoppingCart({ product }) {
+function ShoppingCart({ product, addToCart }) {
   return (
     <div className={styles.cart}>
       <img src={product.images[0]} alt={product.title} />
@@ -8,7 +8,7 @@ function ShoppingCart({ product }) {
         <p>{product.title}</p>
         <p>${product.price}</p>
       </div>
-      <button>Order</button>
+      <button onClick={() => addToCart(product)}>Order</button>
     </div>
   );
 }

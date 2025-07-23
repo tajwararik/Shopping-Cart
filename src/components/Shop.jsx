@@ -3,12 +3,16 @@ import ShoppingCart from "./ShoppingCart";
 import styles from "../styles/Shop.module.css";
 
 function Shop() {
-  const { products } = useOutletContext();
+  const { products, addToCart } = useOutletContext();
 
   return (
     <section className={styles.displayCart}>
       {products.map((product) => (
-        <ShoppingCart key={product.id} product={product} />
+        <ShoppingCart
+          key={product.id}
+          product={product}
+          addToCart={addToCart}
+        />
       ))}
     </section>
   );
