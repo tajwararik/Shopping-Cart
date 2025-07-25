@@ -19,6 +19,8 @@ function App() {
     setCartList((prevCarts) => [...prevCarts, carts]);
   };
 
+  const updateCartList = (newCartList) => setCartList(newCartList);
+
   return (
     <>
       <header>
@@ -26,7 +28,7 @@ function App() {
       </header>
 
       <main>
-        <Outlet context={{ products, addToCart, cartList }} />
+        <Outlet context={{ products, addToCart, cartList, updateCartList }} />
       </main>
     </>
   );
