@@ -26,7 +26,7 @@ function App() {
       </header>
 
       <main>
-        <Outlet context={{ products, addToCart }} />
+        <Outlet context={{ products, addToCart, cartList }} />
       </main>
     </>
   );
