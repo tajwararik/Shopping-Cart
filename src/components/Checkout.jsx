@@ -24,6 +24,16 @@ function Checkout() {
     updateCartList(newCartList);
   };
 
+  const removeAProduct = (cart) => {
+    const index = cartList.findIndex((item) => item.id === cart.id);
+
+    if (index !== -1) {
+      const newCartList = [...cartList];
+      newCartList.splice(index, 1);
+      updateCartList(newCartList);
+    }
+  };
+
   const cartListElements = uniqueCartList.map((cart) => {
     return (
       <div key={cart.id} className={styles.cart}>
@@ -40,7 +50,7 @@ function Checkout() {
           <div>
             <button>+</button>
             <span>{cart.quantity}</span>
-            <button>-</button>
+            <button onClick={() => removeAProduct(cart)}>-</button>
           </div>
         </div>
       </div>
@@ -54,7 +64,13 @@ function Checkout() {
 
   return (
     <section className={styles.checkoutSection}>
-      <div>{cartListElements}</div>
+      <div>
+        {cartList.length === 0 ? (
+          <p>Cart is empty.</p>
+        ) : (
+          cartListElements
+        )}
+      </div>
       <div>
         <h3>Order summary</h3>
         <article>
