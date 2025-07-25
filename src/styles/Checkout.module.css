@@ -1,0 +1,87 @@
+.checkoutSection {
+  width: 80vw;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  column-gap: 20px;
+  margin-top: 25px;
+}
+
+.cart {
+  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  column-gap: 20px;
+  background-color: #fc0;
+  padding: 15px;
+  margin: 10px auto;
+  border-radius: 8px;
+}
+
+.cart img {
+  width: 150px;
+  background-color: #2b2631;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.cart p {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #2b2631;
+}
+
+.cart p:first-of-type {
+  font-size: 1.35rem;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 5px;
+}
+
+.deleteButton {
+  font-size: 1.25rem;
+  color: #da0d0d;
+  cursor: pointer;
+}
+
+.buttons div,
+.buttons div > span {
+  font-size: 1.15rem;
+  color: #d1d0d2;
+  background-color: #2b2631;
+  border-radius: 6px;
+}
+
+.checkoutSection > div:last-of-type {
+  width: 100%;
+  text-align: center;
+  padding-top: 15px;
+  margin: 0 auto;
+}
+
+.checkoutSection > div:last-of-type h3 {
+  font-size: 1.5rem;
+  color: #2b2631;
+  background-color: #d1d0d2;
+  padding: 10px 5px;
+  margin-bottom: 20px;
+}
+
+article {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.checkoutSection > div:last-of-type button {
+  font-weight: 700;
+  color: #2b2631;
+  background-color: #d1d0d2;
+  padding: 10px;
+  margin: 20px auto;
+  border-radius: 8px;
+}
