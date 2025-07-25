@@ -5,19 +5,21 @@ import styles from "../styles/Checkout.module.css";
 function Checkout() {
   const { cartList, updateCartList } = useOutletContext();
 
-  const uniqueCarts = {};
+  function groupCartItems(cartList) {
+    const uniqueCarts = {};
 
-  cartList.forEach((cart) => {
-    const key = cart.id;
+    cartList.forEach((cart) => {
+      const key = cart.id;
 
-    if (uniqueCarts[key]) {
-      uniqueCarts[key].quantity += 1;
-    } else {
-      uniqueCarts[key] = { ...cart, quantity: 1 };
-    }
-  });
+      if (uniqueCarts[key]) {
+        uniqueCarts[key].quantity += 1;
+      } else {
+        uniqueCarts[key] = { ...cart, quantity: 1 };
+      }
+    });
 
-  const uniqueCartList = Object.values(uniqueCarts);
+    return Object.values(uniqueCarts);
+  }
 
   const deleteCart = (cart) => {
     const newCartList = cartList.filter((item) => item.id !== cart.id);
@@ -37,6 +39,8 @@ function Checkout() {
       updateCartList(newCartList);
     }
   };
+
+  const uniqueCartList = groupCartItems(cartList);
 
   const cartListElements = uniqueCartList.map((cart) => {
     return (
