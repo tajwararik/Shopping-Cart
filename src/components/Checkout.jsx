@@ -24,6 +24,10 @@ function Checkout() {
     updateCartList(newCartList);
   };
 
+  const addAProduct = (cart) => {
+    updateCartList([...cartList, cart]);
+  };
+
   const removeAProduct = (cart) => {
     const index = cartList.findIndex((item) => item.id === cart.id);
 
@@ -48,7 +52,7 @@ function Checkout() {
             onClick={() => deleteCart(cart)}
           />
           <div>
-            <button>+</button>
+            <button onClick={() => addAProduct(cart)}>+</button>
             <span>{cart.quantity}</span>
             <button onClick={() => removeAProduct(cart)}>-</button>
           </div>
@@ -65,11 +69,7 @@ function Checkout() {
   return (
     <section className={styles.checkoutSection}>
       <div>
-        {cartList.length === 0 ? (
-          <p>Cart is empty.</p>
-        ) : (
-          cartListElements
-        )}
+        {cartList.length === 0 ? <p>Cart is empty.</p> : cartListElements}
       </div>
       <div>
         <h3>Order summary</h3>
