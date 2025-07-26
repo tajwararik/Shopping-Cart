@@ -6,13 +6,18 @@ import "./App.css";
 function App() {
   const [products, setProducts] = useState([]);
   const [cartList, setCartList] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     fetch(
       "https://dummyjson.com/products/category/mobile-accessories?select=title,price,images"
     )
-      .then((response) => response.json())
-      .then((data) => setProducts(data.products));
+      .then((response) => {
+        if (response.status >= 400) throw new Error("server error");
+        return response.json();
+      })
+      .then((data) => setProducts(data.products))
+      .catch((error) => setError(error));
   }, []);
 
   const addToCart = (carts) => {
