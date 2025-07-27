@@ -48,6 +48,10 @@
   cursor: pointer;
 }
 
+.buttons div {
+  max-width: 120px;
+}
+
 .buttons div,
 .buttons div > span {
   font-size: 1.15rem;
