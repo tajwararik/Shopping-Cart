@@ -49,15 +49,23 @@
 }
 
 .buttons div {
-  max-width: 120px;
+  display: block;
+  border-radius: 6px;
 }
 
 .buttons div,
-.buttons div > span {
+.buttons div > span,
+.buttons div > button {
   font-size: 1.15rem;
   color: #d1d0d2;
   background-color: #2b2631;
-  border-radius: 6px;
+  display: inline-block;
+}
+
+.buttons div > span,
+.buttons div > button {
+  padding: 5px;
+  margin: 5px;
 }
 
 .checkoutSection > div:last-of-type {
