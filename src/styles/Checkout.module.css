@@ -89,11 +89,16 @@ article {
   padding: 10px 20px;
 }
 
+article:last-of-type {
+  padding-bottom: 20px;
+}
+
 .checkoutSection > div:last-of-type button {
-  font-weight: 700;
+  font-size: 1.25rem;
+  font-weight: 600;
   color: #2b2631;
   background-color: #d1d0d2;
-  padding: 10px;
+  padding: 10px 20px;
   margin: 20px auto;
   border-radius: 8px;
 }
