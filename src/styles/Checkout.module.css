@@ -102,3 +102,10 @@ article:last-of-type {
   margin: 20px auto;
   border-radius: 8px;
 }
+
+.checkoutSection > div:last-of-type button:hover {
+  font-weight: 600;
+  color: #d1d0d2;
+  background-color: #2b2631;
+  border: 2px solid #d1d0d2;
+}
