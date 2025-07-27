@@ -6,7 +6,6 @@ import "./App.css";
 function App() {
   const [products, setProducts] = useState([]);
   const [cartList, setCartList] = useState([]);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     fetch(
@@ -17,7 +16,7 @@ function App() {
         return response.json();
       })
       .then((data) => setProducts(data.products))
-      .catch((error) => setError(error));
+      .catch((error) => console.log(error));
   }, []);
 
   const addToCart = (carts) => {
